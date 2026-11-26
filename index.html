@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iRefurb Chennai — 100% Original Displays &amp; Genuine Parts</title>
+  <meta name="description" content="Cracked or Damaged Screen? Fixed with 100% Original Displays & Genuine Parts in Mount Road, Chennai. 100% original displays and genuine spares." />
+
+  <!-- Custom iRefurb Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f1f5f9'/%3E%3Ccircle cx='22' cy='36' r='11' fill='%2394a3b8' stroke='%231e293b' stroke-width='2'/%3E%3Crect x='21' y='6' width='22' height='48' rx='4' fill='%23cbd5e1' stroke='%231e293b' stroke-width='2'/%3E%3Crect x='23' y='13' width='18' height='33' fill='%237dd3fc'/%3E%3Crect x='27' y='21' width='4' height='28' fill='%23f8fafc' stroke='%231e293b' stroke-width='1.5'/%3E%3Crect x='35' y='33' width='6' height='20' rx='2' fill='%23ef5330' stroke='%231e293b' stroke-width='1.5'/%3E%3C/svg%3E" />
+
+  <style>
+    /* =================================================================== */
+    /* 1. DESIGN TOKENS & RESET                                            */
+    /* =================================================================== */
+    :root {
+      --bg-page: #080c14;
+      --bg-card: #0d131f;
+      --bg-input: #090e18;
+      --border: #1e293b;
+      --border-soft: #152033;
+      --accent: #0095ff;
+      --accent-hover: #007ee6;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --green: #22c55e;
+      --red: #ef4444;
+      --gold: #facc15;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg-page);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, select, textarea { font-family: inherit; }
+
+    /* Generous Left & Right Breathing Room */
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    /* =================================================================== */
+    /* 2. STICKY HEADER & CUSTOM BRAND LOGO                                */
+    /* =================================================================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 12, 20, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    .logo-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #f1f5f9;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px;
+      box-shadow: 0 0 16px rgba(0, 149, 255, 0.25);
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      font-size: 16.5px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-text span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover { color: var(--text-main); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 11px;
+      border-radius: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .status-dot.open {
+      background: var(--green);
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.75);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 600;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #040914;
+      box-shadow: 0 4px 18px rgba(0, 149, 255, 0.26);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-dark {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border-color: var(--border);
+    }
+
+    .btn-dark:hover {
+      background: #131c2e;
+      border-color: #334155;
+    }
+
+    .btn-sm { padding: 8px 14px; font-size: 13px; border-radius: 8px; }
+    .btn-lg { padding: 14px 22px; font-size: 14px; }
+
+    .menu-btn {
+      display: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      background: #0a0f1a;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 28px 22px;
+    }
+
+    .mobile-menu.open { display: block; }
+
+    .mobile-menu a.m-link {
+      display: block;
+      padding: 11px 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      border-radius: 8px;
+    }
+
+    .mobile-menu a.m-link:hover {
+      background: var(--bg-card);
+      color: var(--text-main);
+    }
+
+    /* =================================================================== */
+    /* 3. HERO SECTION                                                     */
+    /* =================================================================== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 82% 38%, rgba(0, 149, 255, 0.16), transparent 52%),
+        linear-gradient(180deg, #09101d 0%, #080c14 100%);
+    }
+
+    .hero-bg-art {
+      position: absolute;
+      right: -40px;
+      top: 0;
+      width: 560px;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.45;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      padding-top: 68px;
+      padding-bottom: 68px;
+    }
+
+    .hero-content { max-width: 630px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 13px;
+      border-radius: 7px;
+      background: rgba(0, 149, 255, 0.08);
+      border: 1px solid rgba(0, 149, 255, 0.32);
+      color: var(--accent);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.6vw, 50px);
+      font-weight: 800;
+      line-height: 1.13;
+      letter-spacing: -0.025em;
+      margin-bottom: 18px;
+    }
+
+    .hero p.lead {
+      font-size: clamp(15px, 1.8vw, 17.5px);
+      color: var(--text-muted);
+      max-width: 510px;
+      margin-bottom: 30px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .trust-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(13, 19, 31, 0.65);
+    }
+
+    .trust-inner {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 32px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* =================================================================== */
+    /* 4. SHARED SECTION STYLES                                            */
+    /* =================================================================== */
+    .section {
+      padding-top: 80px;
+      padding-bottom: 80px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      font-size: clamp(25px, 3.5vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.18;
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    /* =================================================================== */
+    /* 5. QUICK QUOTE REQUEST (#get-a-quote)                               */
+    /* =================================================================== */
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .helper-box {
+      margin-top: 26px;
+      padding: 6px 0 6px 14px;
+      border-left: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    .quote-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .field { display: flex; flex-direction: column; }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+
+    .control {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text-main);
+      font-size: 13.5px;
+    }
+
+    select.control {
+      height: 45px;
+      padding: 0 36px 0 14px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      cursor: pointer;
+    }
+
+    select.control:disabled {
+      color: var(--text-dim);
+      opacity: 0.75;
+      cursor: not-allowed;
+    }
+
+    select.control option {
+      background: var(--bg-card);
+      color: var(--text-main);
+    }
+
+    textarea.control {
+      min-height: 116px;
+      padding: 13px 14px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    textarea.control::placeholder { color: var(--text-dim); }
+
+    .control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0, 149, 255, 0.16);
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .notice { color: var(--accent); }
+    .notice.err { color: #f87171; }
+
+    .card-divider {
+      height: 1px;
+      background: var(--border-soft);
+      margin: 18px 0;
+    }
+
+    .form-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-btns .btn { height: 46px; font-size: 13.5px; padding: 0 16px; }
+
+    /* =================================================================== */
+    /* 6. THE IREFURB PROMISE (#our-promise — 2x2 GRID)                    */
+    /* =================================================================== */
+    .promise-grid {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .promise-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .promise-card:hover {
+      border-color: rgba(0, 149, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(0, 149, 255, 0.12);
+      border: 1px solid rgba(0, 149, 255, 0.28);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .promise-card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .promise-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* =================================================================== */
+    /* 7. CUSTOMER REVIEWS (#google-reviews)                               */
+    /* =================================================================== */
+    .reviews-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .google-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 26px;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      box-shadow: 0 16px 42px rgba(0, 149, 255, 0.1);
+      flex-shrink: 0;
+    }
+
+    .rating-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .score-line {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+    }
+
+    .score-line strong { font-size: 27px; font-weight: 700; line-height: 1; }
+    .score-line span { font-size: 13px; color: var(--text-muted); }
+
+    .stars {
+      display: flex;
+      gap: 3px;
+      color: var(--gold);
+      margin: 5px 0 3px;
+    }
+
+    .rating-label { font-size: 11.5px; color: var(--text-muted); }
+
+    /* =================================================================== */
+    /* 8. FOOTER & LOCATION (#location)                                    */
+    /* =================================================================== */
+    .footer {
+      padding-top: 64px;
+      padding-bottom: 36px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 5fr 4fr 3fr;
+      gap: 36px;
+      padding-bottom: 44px;
+    }
+
+    .footer-tagline {
+      margin-top: 14px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      max-width: 260px;
+    }
+
+    .footer h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .address {
+      font-style: normal;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 16px;
+      max-width: 280px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    .contact-links a:hover { color: var(--text-main); }
+
+    .hours-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 10px;
+    }
+
+    .hours-title h3 { margin-bottom: 0; }
+
+    .hours-text {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .copyright {
+      border-top: 1px solid var(--border-soft);
+      padding-top: 22px;
+      font-size: 12.5px;
+      color: var(--text-dim);
+    }
+
+    /* =================================================================== */
+    /* 9. AUTOMATIC RESPONSIVE BREAKPOINTS (TABLET & MOBILE)               */
+    /* =================================================================== */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .menu-btn { display: inline-flex; }
+      .quote-grid { grid-template-columns: 1fr; gap: 30px; }
+      .reviews-wrap { flex-direction: column; align-items: flex-start; }
+      .google-card { width: 100%; justify-content: space-between; flex-wrap: wrap; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .header-inner { height: 64px; }
+      .brand-text { font-size: 15px; }
+      .btn-header-call { display: none; }
+      .status-pill { padding: 5px 9px; font-size: 11px; }
+
+      .hero-inner { padding-top: 44px; padding-bottom: 46px; }
+      .hero-badge { font-size: 9.5px; padding: 5px 10px; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; }
+      .hero-bg-art { opacity: 0.22; right: -180px; }
+
+      .section { padding-top: 56px; padding-bottom: 56px; }
+      .form-row, .form-btns, .promise-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .google-card { flex-direction: column; align-items: stretch; }
+      .google-card .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =================================================================== -->
+  <!-- 1. STICKY TOP HEADER                                                -->
+  <!-- =================================================================== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="iRefurb Chennai Home">
+        <div class="logo-badge">
+          <!-- Custom iRefurb Repair Logo SVG -->
+          <svg viewBox="0 0 64 64" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="iRefurb Logo">
+            <!-- Left Grey Gear -->
+            <circle cx="21" cy="37" r="11" fill="#94a3b8" stroke="#1e293b" stroke-width="2" stroke-dasharray="4 2.5"/>
+            <circle cx="21" cy="37" r="4.5" fill="#f1f5f9" stroke="#1e293b" stroke-width="1.6"/>
+            <!-- Right Grey Gear -->
+            <circle cx="45" cy="41" r="8.5" fill="#94a3b8" stroke="#1e293b" stroke-width="2" stroke-dasharray="3.5 2"/>
+            <circle cx="45" cy="41" r="3.5" fill="#f1f5f9" stroke="#1e293b" stroke-width="1.5"/>
+            <!-- Silver Smartphone Body -->
+            <rect x="20" y="6" width="24" height="48" rx="4" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+            <circle cx="32" cy="9.5" r="1.2" fill="#475569"/>
+            <!-- Cyan Glossy Display -->
+            <rect x="22" y="13" width="20" height="34" fill="#7dd3fc" stroke="#1e293b" stroke-width="1.2"/>
+            <polygon points="22,23 32,13 37,13 22,28" fill="#ffffff" fill-opacity="0.6"/>
+            <!-- Open-End Wrench -->
+            <rect x="27" y="23" width="4.5" height="26" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6"/>
+            <path d="M25.5 17C24 18.5 24 21.5 26 23H32.5C34.5 21.5 34.5 18.5 33 17L31.5 20H27L25.5 17Z" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6" stroke-linejoin="round"/>
+            <!-- Red-Orange Screwdriver -->
+            <rect x="37" y="14" width="2.4" height="19" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.4"/>
+            <rect x="35" y="33" width="6.4" height="20" rx="2.2" fill="#ef5330" stroke="#1e293b" stroke-width="1.6"/>
+            <!-- Ground Baseline -->
+            <line x1="10" y1="54.5" x2="54" y2="54.5" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">iRefurb <span>Chennai</span></div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#get-a-quote">Get a quote</a>
+        <a href="#our-promise">Our promise</a>
+        <a href="#google-reviews">Google reviews</a>
+        <a href="#location">Location</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="status-pill" title="Mon–Sat: 10:30 AM – 10:30 PM IST">
+          <span class="status-dot js-status-dot"></span>
+          <span class="js-status-text">Closed now</span>
+        </div>
+
+        <a href="tel:+918122334434" class="btn btn-primary btn-sm btn-header-call">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Call for a quote</span>
+        </a>
+
+        <button type="button" id="menu-btn" class="menu-btn" aria-label="Open menu" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Down Drawer -->
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="#get-a-quote" class="m-link">Get a quote</a>
+      <a href="#our-promise" class="m-link">Our promise</a>
+      <a href="#google-reviews" class="m-link">Google reviews</a>
+      <a href="#location" class="m-link">Location</a>
+      <a href="tel:+918122334434" class="btn btn-primary btn-sm" style="width:100%;margin-top:10px;padding:12px;">
+        Call for a quote
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ================================================================= -->
+    <!-- 2. HERO SECTION                                                   -->
+    <!-- ================================================================= -->
+    <section class="hero">
+      <!-- Geometric Workbench / Circuit Accent SVG -->
+      <svg class="hero-bg-art" viewBox="0 0 560 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="140" y="60" width="360" height="360" rx="28" stroke="#1e3a5f" stroke-width="1.5"/>
+        <rect x="190" y="110" width="260" height="260" rx="20" stroke="#0095ff" stroke-opacity="0.28" stroke-width="1.5"/>
+        <path d="M80 180H190M80 260H140M450 220H540M320 40V110M280 370V450" stroke="#0095ff" stroke-opacity="0.3" stroke-width="1.5"/>
+        <circle cx="190" cy="180" r="4" fill="#0095ff"/>
+        <circle cx="450" cy="220" r="4" fill="#0095ff"/>
+        <circle cx="320" cy="110" r="4" fill="#38bdf8"/>
+        <rect x="245" y="155" width="150" height="170" rx="16" fill="#0d192e" stroke="#2563eb" stroke-opacity="0.45" stroke-width="1.5"/>
+      </svg>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <span>100% ORIGINAL DISPLAYS &amp; GENUINE SPARES ONLY</span>
+          </div>
+
+          <h1>Cracked or Damaged Screen? Fixed with 100% Original Displays &amp; Genuine Parts.</h1>
+
+          <p class="lead">
+            We fix only original displays and original parts with genuine spares.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="tel:+918122334434" class="btn btn-primary btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>Call to Get a Quote</span>
+            </a>
+
+            <a href="https://wa.me/918122334434?text=Hi%20iRefurb%20Chennai%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20my%20phone%20repair." target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>Request a Quote on WhatsApp ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Hero Trust Strip -->
+      <div class="trust-bar">
+        <div class="container trust-inner">
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0095ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Genuine spares only</span>
+          </div>
+
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0095ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Mount Road, Chennai</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 3. QUICK QUOTE REQUEST SECTION (#get-a-quote)                     -->
+    <!-- ================================================================= -->
+    <section id="get-a-quote" class="section">
+      <div class="container quote-grid">
+        <div>
+          <p class="eyebrow">QUICK QUOTE REQUEST</p>
+          <h2>Tell us what happened.</h2>
+          <p class="section-sub">
+            Share your phone model and screen issue. We'll take it from there on WhatsApp.
+          </p>
+
+          <div class="helper-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0095ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span id="helper-text">Choose a brand first to see matching models.</span>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <form id="quote-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="brand-select">1. Select brand</label>
+                <select id="brand-select" class="control">
+                  <option value="">Choose a brand</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="model-select">2. Select model</label>
+                <select id="model-select" class="control" disabled>
+                  <option value="">Select a brand first</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="issue-input">3. Describe the issue</label>
+              <textarea
+                id="issue-input"
+                class="control"
+                maxlength="500"
+                placeholder="Write your issue here — e.g., cracked glass, green line, black screen, touch not working"
+              ></textarea>
+              <div class="meta-row">
+                <span id="form-notice" class="notice"></span>
+                <span id="char-count">0/500</span>
+              </div>
+            </div>
+
+            <div class="card-divider"></div>
+
+            <div class="form-btns">
+              <button type="submit" class="btn btn-primary">
+                <span>Request a Quote in WhatsApp →</span>
+              </button>
+
+              <a href="tel:+918122334434" class="btn btn-dark">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Call to Get a Quote</span>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 4. THE IREFURB PROMISE SECTION (#our-promise — 4 CARDS)           -->
+    <!-- ================================================================= -->
+    <section id="our-promise" class="section">
+      <div class="container">
+        <p class="eyebrow">THE IREFURB PROMISE</p>
+        <h2>Quality you can count on.</h2>
+
+        <div class="promise-grid">
+          <!-- Card 1 -->
+          <div class="promise-card">
+            <div class="icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3>Original Displays &amp; Original Parts</h3>
+            <p>Only original displays and original parts are fixed—no low-grade duplicates.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="promise-card">
+            <div class="icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Genuine Spares Only</h3>
+            <p>100% genuine spare parts used for every repair.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="promise-card">
+            <div class="icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            </div>
+            <h3>Fast Fix. Flawless Finish.</h3>
+            <p>Precision workmanship and clean assembly for a factory-fresh finish.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="promise-card">
+            <div class="icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Express Same-Day Service</h3>
+            <p>Quick turnaround with same-day screen and part replacements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 5. CUSTOMER REVIEWS SECTION (#google-reviews)                     -->
+    <!-- ================================================================= -->
+    <section id="google-reviews" class="section">
+      <div class="container reviews-wrap">
+        <div>
+          <p class="eyebrow">CUSTOMER REVIEWS</p>
+          <h2>What customers say on Google.</h2>
+          <p class="section-sub">
+            Read the latest customer feedback and share your experience on Google.
+          </p>
+        </div>
+
+        <div class="google-card">
+          <div class="rating-box">
+            <!-- Multicolor Google G Icon -->
+            <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
+              <path fill="#34A853" d="M12 24c3.3 0 6.08-1.09 8.1-2.96l-3.88-3.05c-1.1.74-2.51 1.18-4.22 1.18-3.24 0-5.99-2.19-6.97-5.13H1.01v3.14C3.05 21.23 7.24 24 12 24Z"/>
+              <path fill="#FBBC05" d="M5.03 14.04c-.25-.74-.39-1.54-.39-2.36 0-.82.14-1.62.39-2.36V6.18H1.01C.37 7.45 0 8.88 0 10.38s.37 2.93 1.01 4.2l4.02-3.14Z" transform="translate(0, 1.3)"/>
+              <path fill="#EA4335" d="M12 4.75c1.79 0 3.41.62 4.68 1.82l3.51-3.51C18.07 1.19 15.3 0 12 0 7.24 0 3.05 2.77 1.01 6.82l4.02 3.14c.98-2.94 3.73-5.21 6.97-5.21Z"/>
+            </svg>
+
+            <div>
+              <div class="score-line">
+                <strong>4.9</strong>
+                <span>/ 5.0</span>
+              </div>
+              <div class="stars" aria-label="5 out of 5 stars">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <div class="rating-label">Google rating</div>
+            </div>
+          </div>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=iRefurb+Chennai+SSR+Mall+Wallers+Rd+Mount+Road+Chennai"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-dark btn-sm"
+            style="padding:11px 16px;"
+          >
+            <span>View All Reviews on Google ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =================================================================== -->
+  <!-- 6. FOOTER & STORE LOCATION (#location)                              -->
+  <!-- =================================================================== -->
+  <footer id="location" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#top" class="brand">
+            <div class="logo-badge">
+              <svg viewBox="0 0 64 64" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="iRefurb Logo">
+                <circle cx="21" cy="37" r="11" fill="#94a3b8" stroke="#1e293b" stroke-width="2" stroke-dasharray="4 2.5"/>
+                <circle cx="21" cy="37" r="4.5" fill="#f1f5f9" stroke="#1e293b" stroke-width="1.6"/>
+                <circle cx="45" cy="41" r="8.5" fill="#94a3b8" stroke="#1e293b" stroke-width="2" stroke-dasharray="3.5 2"/>
+                <circle cx="45" cy="41" r="3.5" fill="#f1f5f9" stroke="#1e293b" stroke-width="1.5"/>
+                <rect x="20" y="6" width="24" height="48" rx="4" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+                <circle cx="32" cy="9.5" r="1.2" fill="#475569"/>
+                <rect x="22" y="13" width="20" height="34" fill="#7dd3fc" stroke="#1e293b" stroke-width="1.2"/>
+                <polygon points="22,23 32,13 37,13 22,28" fill="#ffffff" fill-opacity="0.6"/>
+                <rect x="27" y="23" width="4.5" height="26" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6"/>
+                <path d="M25.5 17C24 18.5 24 21.5 26 23H32.5C34.5 21.5 34.5 18.5 33 17L31.5 20H27L25.5 17Z" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6" stroke-linejoin="round"/>
+                <rect x="37" y="14" width="2.4" height="19" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.4"/>
+                <rect x="35" y="33" width="6.4" height="20" rx="2.2" fill="#ef5330" stroke="#1e293b" stroke-width="1.6"/>
+                <line x1="10" y1="54.5" x2="54" y2="54.5" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="brand-text">iRefurb <span>Chennai</span></div>
+          </a>
+          <p class="footer-tagline">100% original displays and genuine spares.</p>
+        </div>
+
+        <div>
+          <h3>Visit the store</h3>
+          <address class="address">
+            2nd Floor, SSR Mall, Wallers Rd, Mount Road, Chintadripet, Chennai, Tamil Nadu 600002
+          </address>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=2nd+Floor,+SSR+Mall,+Wallers+Rd,+Mount+Road,+Chintadripet,+Chennai,+Tamil+Nadu+600002"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-dark btn-sm"
+            style="padding:10px 15px;"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Get Directions ↗</span>
+          </a>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <div class="contact-links">
+            <a href="tel:+918122334434">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0095ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+91 81223 34434</span>
+            </a>
+
+            <a href="https://wa.me/918122334434?text=Hi%20iRefurb%20Chennai%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0095ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="hours-title">
+            <h3>Working hours</h3>
+            <span class="status-pill" style="padding:4px 9px;font-size:11px;">
+              <span class="status-dot js-status-dot"></span>
+              <span class="js-status-text">Closed now</span>
+            </span>
+          </div>
+
+          <div class="hours-text">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0095ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p>Monday – Saturday: 10:30 AM – 10:30 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">© 2026 iRefurb Chennai</div>
+    </div>
+  </footer>
+
+  <!-- =================================================================== -->
+  <!-- 7. INTERACTIVE QUOTE FORM, IST HOURS & MOBILE NAV SCRIPT            -->
+  <!-- =================================================================== -->
+  <script>
+    (function () {
+      const MODELS = {
+        "Apple": ["iPhone 16 Pro Max", "iPhone 16 Pro", "iPhone 16", "iPhone 15 Pro Max", "iPhone 15 Pro", "iPhone 15", "iPhone 14 Pro Max", "iPhone 14 Pro", "iPhone 14", "iPhone 13 Pro Max", "iPhone 13", "iPhone 12 Pro Max", "iPhone 12", "iPhone 11"],
+        "Samsung": ["Galaxy S24 Ultra", "Galaxy S24+", "Galaxy S24", "Galaxy S23 Ultra", "Galaxy S23", "Galaxy S22 Ultra", "Galaxy S21 FE", "Galaxy Z Fold 6", "Galaxy Z Flip 6", "Galaxy A55 5G", "Galaxy A54 5G"],
+        "OnePlus": ["OnePlus 13", "OnePlus 12", "OnePlus 12R", "OnePlus 11", "OnePlus 11R", "OnePlus 10 Pro", "OnePlus 9R", "OnePlus Nord 4", "OnePlus Nord CE 4"],
+        "Google Pixel": ["Pixel 9 Pro XL", "Pixel 9 Pro", "Pixel 9", "Pixel 8 Pro", "Pixel 8", "Pixel 8a", "Pixel 7 Pro", "Pixel 7", "Pixel 6a"],
+        "Vivo": ["Vivo X100 Pro", "Vivo X100", "Vivo V40 Pro", "Vivo V40", "Vivo V30 Pro", "Vivo V29 Pro", "Vivo T3 Pro"],
+        "Oppo": ["Oppo Find X7 Ultra", "Oppo Reno 12 Pro", "Oppo Reno 11 Pro", "Oppo Reno 10 Pro+", "Oppo F27 Pro+"],
+        "Xiaomi / Redmi": ["Xiaomi 14 Ultra", "Xiaomi 14", "Redmi Note 13 Pro+", "Redmi Note 13 Pro", "Redmi Note 12 Pro+", "POCO X6 Pro", "POCO F6"],
+        "Realme": ["Realme GT 6", "Realme GT 6T", "Realme 13 Pro+", "Realme 12 Pro+", "Realme 11 Pro+"],
+        "Nothing": ["Nothing Phone (2a) Plus", "Nothing Phone (2a)", "Nothing Phone (2)", "Nothing Phone (1)"],
+        "Motorola": ["Motorola Edge 50 Ultra", "Motorola Edge 50 Pro", "Motorola Edge 50 Fusion", "Motorola Edge 40 Neo"],
+        "iQOO": ["iQOO 12 5G", "iQOO 11 5G", "iQOO Neo 9 Pro", "iQOO Neo 7 Pro", "iQOO Z9s Pro"]
+      };
+
+      // Live IST Working Hours Check (Mon–Sat 10:30 AM – 10:30 PM IST)
+      function updateStoreStatus() {
+        try {
+          const ist = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
+          const day = ist.getDay();
+          const mins = ist.getHours() * 60 + ist.getMinutes();
+          const isOpen = day >= 1 && day <= 6 && mins >= 630 && mins < 1350;
+
+          document.querySelectorAll(".js-status-dot").forEach((el) => {
+            el.classList.toggle("open", isOpen);
+          });
+          document.querySelectorAll(".js-status-text").forEach((el) => {
+            el.textContent = isOpen ? "Open now" : "Closed now";
+          });
+        } catch (e) {}
+      }
+
+      // Populate Brand & Model Selectors
+      const brandSel = document.getElementById("brand-select");
+      const modelSel = document.getElementById("model-select");
+      const helperText = document.getElementById("helper-text");
+      const issueInput = document.getElementById("issue-input");
+      const charCount = document.getElementById("char-count");
+      const notice = document.getElementById("form-notice");
+
+      Object.keys(MODELS).forEach((brand) => {
+        const opt = document.createElement("option");
+        opt.value = brand;
+        opt.textContent = brand;
+        brandSel.appendChild(opt);
+      });
+
+      brandSel.addEventListener("change", () => {
+        const brand = brandSel.value;
+        modelSel.innerHTML = "";
+        if (!brand) {
+          modelSel.disabled = true;
+          modelSel.innerHTML = '<option value="">Select a brand first</option>';
+          helperText.textContent = "Choose a brand first to see matching models.";
+          return;
+        }
+        modelSel.disabled = false;
+        const def = document.createElement("option");
+        def.value = "";
+        def.textContent = "Choose " + brand + " model";
+        modelSel.appendChild(def);
+
+        MODELS[brand].forEach((m) => {
+          const opt = document.createElement("option");
+          opt.value = m;
+          opt.textContent = m;
+          modelSel.appendChild(opt);
+        });
+
+        const other = document.createElement("option");
+        other.value = "Other " + brand + " Model";
+        other.textContent = "Other Model";
+        modelSel.appendChild(other);
+
+        helperText.innerHTML = "<strong style='color:#f8fafc;'>" + brand + "</strong> selected — choose your model next.";
+      });
+
+      modelSel.addEventListener("change", () => {
+        if (modelSel.value) {
+          helperText.innerHTML = "Ready to quote for <strong style='color:#f8fafc;'>" + modelSel.value + "</strong>.";
+        }
+      });
+
+      issueInput.addEventListener("input", () => {
+        charCount.textContent = issueInput.value.length + "/500";
+      });
+
+      document.getElementById("quote-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const brand = brandSel.value.trim();
+        const model = modelSel.value.trim();
+        const issue = issueInput.value.trim();
+
+        if (!brand && !issue) {
+          notice.textContent = "Please select a brand or describe your issue.";
+          notice.className = "notice err";
+          brandSel.focus();
+          return;
+        }
+
+        notice.textContent = "Opening WhatsApp...";
+        notice.className = "notice";
+
+        const lines = [
+          "Hi iRefurb Chennai, I'd like a repair quote:",
+          brand ? "• Brand: " + brand : "",
+          model ? "• Model: " + model : "",
+          issue ? "• Issue: " + issue : "• Issue: Screen / genuine parts inquiry"
+        ].filter(Boolean);
+
+        window.open("https://wa.me/918122334434?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener,noreferrer");
+      });
+
+      // Mobile Navigation Drawer Toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(open));
+      });
+      mobileMenu.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      updateStoreStatus();
+      setInterval(updateStoreStatus, 60000);
+    })();
+  </script>
+</body>
+</html>
